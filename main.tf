@@ -10,7 +10,7 @@ terraform {
     organization = "Tunerli"
 
     workspaces {
-      name = "remotestate"
+      name = "TerraformCI"
     }
   }
 }
