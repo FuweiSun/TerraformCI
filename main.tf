@@ -20,24 +20,17 @@ provider "azurerm" {
   skip_provider_registration = true
 }
 
-resource "azurerm_resource_group" "rg" {
-  name     = "Tunerli-rg1"
+resource "azurerm_resource_group" "rg2" {
+  name     = "Tunerli-rg2"
   location = "Southeast Asia"
 }
 
 resource "azurerm_storage_account" "storage" {
-  name                     = "stgtnl002"
-  resource_group_name      = azurerm_resource_group.rg.name
-  location                 = azurerm_resource_group.rg.location
+  name                     = "stgtnl003"
+  resource_group_name      = azurerm_resource_group.rg2.name
+  location                 = azurerm_resource_group.rg2.location
   account_tier             = "Standard"
   account_replication_type = "GRS"
 }
 
-resource "azurerm_storage_account" "storage-new" {
-  name                     = "stgtnl003"
-  resource_group_name      = azurerm_resource_group.rg.name
-  location                 = azurerm_resource_group.rg.location
-  account_tier             = "Standard"
-  account_replication_type = "GRS"
-}
 
